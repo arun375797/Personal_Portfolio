@@ -127,9 +127,7 @@ const Experience = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`relative grid md:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 0 ? 'md:text-right' : 'md:flex-row-reverse'
-                }`}
+                className="relative grid md:grid-cols-2 gap-8 items-center"
               >
                 {/* Content */}
                 <motion.div
@@ -152,7 +150,7 @@ const Experience = () => {
                     </h3>
 
                     {/* Meta Info */}
-                    <div className={`flex flex-wrap gap-4 mb-4 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+                    <div className="flex flex-wrap gap-4 mb-4">
                       <span className="flex items-center gap-2 text-dark-300">
                         <FiCalendar className="text-primary-400" />
                         {exp.period}
@@ -164,21 +162,22 @@ const Experience = () => {
                     </div>
 
                     {/* Responsibilities */}
-                    <ul className={`space-y-2 text-dark-200 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                    <ul className="space-y-3 text-dark-200 text-left">
                       {exp.responsibilities.map((resp, i) => (
                         <motion.li
                           key={i}
-                          className="flex items-start gap-2"
+                          className="flex items-start gap-3"
                           initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
                           animate={inView ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 0.8 + i * 0.1 }}
                         >
-                          <span className={`text-primary-400 mt-1 ${index % 2 === 0 ? 'order-2 md:order-1' : 'order-1'}`}>
+                          <span
+                            className="mt-1 text-primary-400 flex-shrink-0 leading-none"
+                            aria-hidden="true"
+                          >
                             ▹
                           </span>
-                          <span className={index % 2 === 0 ? 'order-1 md:order-2' : 'order-2'}>
-                            {resp}
-                          </span>
+                          <span className="flex-1">{resp}</span>
                         </motion.li>
                       ))}
                     </ul>
@@ -237,5 +236,3 @@ const Experience = () => {
 };
 
 export default Experience;
-
-
