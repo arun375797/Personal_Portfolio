@@ -146,7 +146,7 @@ const Hero = () => {
                   Get In Touch
                 </motion.a>
                 <motion.a
-                  href="/resume.pdf"
+                  href="/arun%20cv.pdf"
                   className="btn-outline flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -265,5 +265,4 @@ const Hero = () => {
 };
 
 export default Hero;
-
 
